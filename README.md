@@ -28,8 +28,9 @@ Back de proyecto Plift
 ## Railway .env vars
 ```
 DATABASE_URL=postgresql://usuario:contraseña@host:5432/database?sslmode=require
-SECRET_KEY=tu_clave_secreta_super_segura
+SECRET_KEY=
 DEBUG=False
 ALLOWED_HOSTS=*
+CORS_ALLOW_ALL=True
 ```
 
