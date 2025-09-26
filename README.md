@@ -20,3 +20,16 @@ Back de proyecto Plift
 1. Correr server con el comando:
    `python manage.py runserver`
 
+# Deploy Docker Railway
+
+## Build
+1. `docker build --build-arg GITHUB_TOKEN=tu_token_aqui .`
+
+## Railway .env vars
+```
+DATABASE_URL=postgresql://usuario:contraseña@host:5432/database?sslmode=require
+SECRET_KEY=tu_clave_secreta_super_segura
+DEBUG=False
+ALLOWED_HOSTS=*
+```
+
