@@ -67,14 +67,14 @@ if config('DATABASE_URL', default=None):
         'default': dj_database_url.parse(config('DATABASE_URL'))
     }
 else:
-    # Para desarrollo local
+    # Para desarrollo local (con defaults para evitar errores en build)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('DB_NAME'),
-            'USER': config('DB_USER'),
-            'PASSWORD': config('DB_PASSWORD'),
-            'HOST': config('DB_HOST'),
+            'NAME': config('DB_NAME', default='temp_db'),
+            'USER': config('DB_USER', default='temp_user'),
+            'PASSWORD': config('DB_PASSWORD', default='temp_pass'),
+            'HOST': config('DB_HOST', default='localhost'),
             'PORT': config('DB_PORT', default=5432, cast=int),
         }
     }
